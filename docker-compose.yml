@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  core-app:
+    build: ./dotnetapp
+    networks:
+      - backend
+
+  nginx:
+    build: ./nginx
+    container_name: core-app.local
+    ports:
+      - "80:80"
+    depends_on:
+      - core-app
+    networks:
+      - backend
+
+networks:
+  backend:

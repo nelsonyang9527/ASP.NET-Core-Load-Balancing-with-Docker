@@ -1,0 +1,4 @@
+.vscode
+dockerignore
+dotnetapp/obj
+dotnetapp/bin
