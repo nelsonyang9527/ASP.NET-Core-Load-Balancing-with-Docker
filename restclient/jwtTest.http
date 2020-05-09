@@ -1,0 +1,17 @@
+# @name authToken
+POST https://localhost:44359/JWT/Authenticate
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test"
+}
+
+###
+
+GET https://localhost:44359/JWT
+Authorization: Bearer {{authToken.response.body.$.token}}
+
+
+# https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+# https://github.com/cornflourblue/aspnet-core-3-jwt-authentication-api
